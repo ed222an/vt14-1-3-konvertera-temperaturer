@@ -1,0 +1,26 @@
+﻿#conversion {
+    float:right;
+    width: 200px;
+    height:auto;
+    border: 1px solid black;
+    margin-right:1250px;
+    background-color:lightgray;
+}
+
+#header {
+    font-size:30px;
+    padding-top:20px;
+    background-color:darkgray;
+    text-align:center;
+}
+
+#HeaderLabel1 {
+    margin-right:65px;
+}
+#HeaderLabel2 {
+    margin-right:5px;
+}
+
+#ValidationSummary1 li {
+    color:red;
+}
