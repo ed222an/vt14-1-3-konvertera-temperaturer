@@ -15,7 +15,7 @@
         </div>
         <div>
             <%-- Konverteringstabellen --%>
-            <asp:Label ID="ConversionLabel" runat="server" Text="Label" Visible="true">
+            <asp:Label ID="ConversionLabel" runat="server" Text="Label" Visible="false">
                 <div id="conversion">
                     <div id="header">
                         <asp:Label ID="HeaderLabel1" runat="server"></asp:Label>
@@ -72,10 +72,10 @@
             <asp:Literal ID="RadioLiteral" runat="server" Text="Typ av konvertering"></asp:Literal>
         </div>
         <div>
-            <asp:RadioButton ID="CelToFahRadioButton" runat="server" Text="Celcius till Fahrenheit" GroupName="RadioButtons" Checked="True" />
+            <asp:RadioButton ID="CelToFahRadioButton" runat="server" Text="Celsius till Fahrenheit" GroupName="RadioButtons" Checked="True" />
         </div>
         <div>
-            <asp:RadioButton ID="FahToCelRadioButton" runat="server" Text="Fahrenheit till Celcius" GroupName="RadioButtons" />
+            <asp:RadioButton ID="FahToCelRadioButton" runat="server" Text="Fahrenheit till Celsius" GroupName="RadioButtons" />
         </div>
         <div>
             <asp:Button ID="ConvertButton" runat="server" Text="Konvertera" OnClick="ConvertButton_Click" />
