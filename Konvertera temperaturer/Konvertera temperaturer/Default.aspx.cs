@@ -19,7 +19,84 @@ namespace Konvertera_temperaturer
         {
             if (IsValid)
             {
+                // Variabler
+                var startValue = int.Parse(StartTextBox.Text);
                 var endValue = int.Parse(EndTextBox.Text);
+                var scaleValue = int.Parse(ScaleTextBox.Text);
+
+                // Väljer mellan °C & °F i tabellhuvudet.
+                if (!CelToFahRadioButton.Checked)
+                {
+                    First.Text = "&degF";
+                    Second.Text = "&degC";
+                }
+
+                for (int temp = startValue; temp <= endValue; temp += scaleValue)
+                {
+                    TableRow row = new TableRow();
+                    ConversionTable.Rows.Add(row);
+                    TableCell[] cells = new TableCell[] { new TableCell(), new TableCell() };
+                    row.Cells.AddRange(cells);
+
+                    cells[0].Text = temp.ToString();
+                    cells[1].Text = CelToFahRadioButton.Checked ?
+                        TemperatureConverter.CelsiusToFahrenheit(temp).ToString() :
+                        TemperatureConverter.FahrenheitToCelsius(temp).ToString();
+                }
+
+                // Visar tabellen.
+                ConversionLabel.Visible = true;
+            }
+        }
+    }
+}
+
+/*
+                // Skapar nya rader för tabellen.
+                for (int rowNum = 1; rowNum < endValue; rowNum++)
+                {
+                    if (startValue > endValue)
+                    {
+                        break;
+                    }
+
+                    TableRow tempRow = new TableRow();
+                    for (int cellNum = 0; cellNum < 2; cellNum++)
+                    {
+                        TableCell tempCell = new TableCell();
+
+                        // Är Celsius till Fahrenheit vald?
+                        if (CelToFahRadioButton.Checked == true)
+                        {
+                            if (cellNum == 0)
+                            {
+                                tempCell.Text = startValue.ToString();
+                                tempRow.Cells.Add(tempCell);
+                            }
+                            else
+                            {
+                                tempCell.Text = TemperatureConverter.CelsiusToFahrenheit(startValue).ToString();
+                                tempRow.Cells.Add(tempCell);
+                            }
+                        }
+                        else // Annars räknas allt via Fahrenheit till Celsius.
+                        {
+                            if (cellNum == 0)
+                            {
+                                tempCell.Text = startValue.ToString();
+                                tempRow.Cells.Add(tempCell);
+                            }
+                            else
+                            {
+                                tempCell.Text = TemperatureConverter.FahrenheitToCelsius(startValue).ToString();
+                                tempRow.Cells.Add(tempCell);
+                            }
+                        }
+                    }
+                    // Ökar startvärdet med stegvärdet & lägger till raden i tabellen.
+                    startValue += scaleValue;
+                    ConversionTable.Rows.Add(tempRow);
+                }
 
                 // Skapar en stil för rader och celler.
                 TableItemStyle tableStyle = new TableItemStyle();
@@ -27,57 +104,8 @@ namespace Konvertera_temperaturer
                 tableStyle.VerticalAlign = VerticalAlign.Middle;
                 tableStyle.Width = Unit.Pixel(100);
 
-                // Väljer mellan °C & °F i tabellhuvudet.
-                if (CelToFahRadioButton.Checked == true)
-                {
-                    HeaderLabel1.Text = "&degC";
-                    HeaderLabel2.Text = "&degF";
-                }
-                else
-                {
-                    HeaderLabel1.Text = "&degF";
-                    HeaderLabel2.Text = "&degC";
-                }
-
-                // Create more rows for the table.
-                for (int rowNum = 1; rowNum < endValue; rowNum++)
-                {
-                    TableRow tempRow = new TableRow();
-                    for (int cellNum = 0; cellNum < 2; cellNum++)
-                    {
-                        TableCell tempCell = new TableCell();
-                        // Olika utskrift beroende av Celsius eller Fahrenheit.
-                        if (rowNum == 1 && cellNum == 0)
-                        {
-                            tempCell.Text = StartTextBox.Text;
-                            tempRow.Cells.Add(tempCell);
-                        }
-                        else if (CelToFahRadioButton.Checked == true)
-                        {
-                            tempCell.Text =
-                                String.Format("({0})", rowNum);
-                            tempRow.Cells.Add(tempCell);
-                        }
-                        else
-                        {
-                            tempCell.Text =
-                                String.Format("({0},{1})", rowNum, cellNum);
-                            tempRow.Cells.Add(tempCell);
-                        }
-                    }
-                    ConversionTable.Rows.Add(tempRow);
-                }
-
                 // Lägger till stilen till tabellen.
                 foreach (TableRow rw in ConversionTable.Rows)
                     foreach (TableCell cel in rw.Cells)
                         cel.ApplyStyle(tableStyle);
-
-                // Visar tabellen.
-                ConversionLabel.Visible = true;
-            }
-        }
-
-
-    }
-}
+*/

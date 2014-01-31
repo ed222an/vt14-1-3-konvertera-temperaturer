@@ -13,6 +13,15 @@ namespace Konvertera_temperaturer {
     public partial class Default {
         
         /// <summary>
+        /// Head1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
+        
+        /// <summary>
         /// form1 control.
         /// </summary>
         /// <remarks>
@@ -40,24 +49,6 @@ namespace Konvertera_temperaturer {
         protected global::System.Web.UI.WebControls.Label ConversionLabel;
         
         /// <summary>
-        /// HeaderLabel1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label HeaderLabel1;
-        
-        /// <summary>
-        /// HeaderLabel2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label HeaderLabel2;
-        
-        /// <summary>
         /// ConversionTable control.
         /// </summary>
         /// <remarks>
@@ -65,6 +56,24 @@ namespace Konvertera_temperaturer {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Table ConversionTable;
+        
+        /// <summary>
+        /// First control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableHeaderCell First;
+        
+        /// <summary>
+        /// Second control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableHeaderCell Second;
         
         /// <summary>
         /// StartLiteral control.

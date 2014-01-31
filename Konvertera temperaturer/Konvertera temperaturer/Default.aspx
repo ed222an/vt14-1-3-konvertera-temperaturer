@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head id="Head1" runat="server">
     <title>Konvertera temperaturer</title>
     <link href="Content/style.css" rel="stylesheet" />
 </head>
@@ -17,13 +17,12 @@
             <%-- Konverteringstabellen --%>
             <asp:Label ID="ConversionLabel" runat="server" Text="Label" Visible="false">
                 <div id="conversion">
-                    <div id="header">
-                        <asp:Label ID="HeaderLabel1" runat="server"></asp:Label>
-                        <asp:Label ID="HeaderLabel2" runat="server"></asp:Label>
-                    </div>
-                    <div id="content">
-                        <asp:Table ID="ConversionTable" runat="server"></asp:Table>
-                    </div>
+                    <asp:Table ID="ConversionTable" runat="server" CssClass="temperature">
+                        <asp:TableHeaderRow>
+                            <asp:TableHeaderCell ID="First">&degC</asp:TableHeaderCell>
+                            <asp:TableHeaderCell ID="Second">&degF</asp:TableHeaderCell>
+                        </asp:TableHeaderRow>
+                    </asp:Table>
                 </div>
             </asp:Label>
             <%-- Starttemperatur --%>
@@ -50,8 +49,8 @@
                 ControlToValidate="EndTextBox"
                 Display="None"></asp:RequiredFieldValidator>
             <asp:CompareValidator ID="EndCompareValidator" runat="server"
-                ErrorMessage="Fyll i ett heltal lägre än starttemperaturen."
-                ControlToValidate="EndTextBox" Operator="LessThan" Type="Integer" ControlToCompare="StartTextBox" Display="None"></asp:CompareValidator>
+                ErrorMessage="Fyll i ett heltal högre än starttemperaturen."
+                ControlToValidate="EndTextBox" Operator="GreaterThan" Type="Integer" ControlToCompare="StartTextBox" Display="None"></asp:CompareValidator>
         </div>
         <div>
             <%-- Temperatursteg --%>

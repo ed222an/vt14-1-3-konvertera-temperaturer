@@ -32,4 +32,11 @@ a {
     background-color:yellow;
     color:black;
 }
-
+.temperature th {
+    background-color:darkgray;
+    width:100px;
+}
+.temperature td {
+    text-align:center;
+    vertical-align:middle;
+}
